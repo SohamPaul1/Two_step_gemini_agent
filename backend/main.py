@@ -21,7 +21,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 # Model configuration
 model = genai.GenerativeModel(
-    "gemini-2.0-flash-exp",
+    "gemini-3.1-flash-lite-preview",
     generation_config={
         "temperature": 0.7,
         "max_output_tokens": 2048,
