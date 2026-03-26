@@ -122,7 +122,7 @@ Two_step_gemini_agent/
 
 Edit `backend/main.py` to customize:
 
-- **Model selection**: Change `gemini-2.0-flash-exp` to another Gemini model
+- **Model selection**: Change `gemini-3.1-flash-lite-preview` to another Gemini model
 - **Generation config**: Adjust temperature, max_output_tokens
 - **Safety settings**: Modify content filtering levels
 - **Port**: Change the port in `uvicorn.run()`
