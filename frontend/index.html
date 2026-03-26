@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Voice Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Gemini Voice Agent</h1>
+            <p class="subtitle">Powered by Gemini 2.0 Flash</p>
+        </header>
+
+        <main>
+            <div class="status-panel">
+                <div class="status-indicator" id="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="status-text">Disconnected</span>
+                </div>
+                <div class="connection-id" id="connection-id"></div>
+            </div>
+
+            <div class="control-panel">
+                <button class="mic-button" id="mic-button" disabled>
+                    <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span class="mic-text">Click to Start</span>
+                </button>
+
+                <button class="interrupt-button" id="interrupt-button" disabled>
+                    ⏹️ Stop
+                </button>
+            </div>
+
+            <div class="visualization">
+                <canvas id="audio-visualizer"></canvas>
+            </div>
+
+            <div class="transcript-panel">
+                <h3>Conversation</h3>
+                <div class="transcript" id="transcript">
+                    <div class="message system">
+                        <span class="message-label">System:</span>
+                        <span class="message-text">Click "Connect" to start...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audio-status" id="audio-status">
+                <div class="vad-indicator">
+                    <span class="vad-label">Voice Activity:</span>
+                    <span class="vad-status" id="vad-status">Inactive</span>
+                </div>
+                <div class="audio-level">
+                    <span class="level-label">Audio Level:</span>
+                    <div class="level-bar">
+                        <div class="level-fill" id="level-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Press and hold the microphone button to speak. Release to send.</p>
+            <p>You can interrupt the agent at any time by clicking Stop.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
